@@ -3,6 +3,8 @@ Explore the parameters of the cache with cpuid
 
 ## Usage
 
+Example on my Intel Core i5-5200U:
+
     $ make
 
     $ ./cacheid 
