@@ -28,14 +28,14 @@ int main(){
      * EAX, bits 07-05
      * Starts at 1
      */
-    long int level = (eax & ~(~0 << 3) << 5) >> 5;
+    unsigned long level = (eax & ~(~0ul << 3) << 5) >> 5;
     printf("\n-- Level: %lu ", level);
 
     /*
      * Cache type
      * EAX, bits 04-00
      */
-    long int type = (eax & ~(~0 << 4) << 0) >> 0;
+    unsigned long type = (eax & ~(~0ul << 4) << 0) >> 0;
     switch(type){
       case 1:
         printf("(data cache)\n");
@@ -91,7 +91,7 @@ int main(){
      * EBX, bits 11-00
      * Add one to the return value to get the result.
      */
-    long int line_size = (ebx & ~(~0 << 12) << 0) >> 0;
+    unsigned long line_size = (ebx & ~(~0ul << 12) << 0) >> 0;
     printf("Line size: %lu\n", line_size+1);
 
     /*
@@ -99,7 +99,7 @@ int main(){
      * EBX, bits 31-22
      * Add one to the return value to get the result.
      */
-    long int ways = (ebx & ~(~0 << 10) << 22) >> 22;
+    unsigned long ways = (ebx & ~(~0ul << 10) << 22) >> 22;
     printf("Number of ways: %lu\n", ways+1);
 
     /*
@@ -107,7 +107,7 @@ int main(){
      * ECX, bits 31-22
      * Add one to the return value to get the result.
      */
-    long int sets = (ecx & ~(~0 << 31) << 0) >> 0;
+    unsigned long sets = (ecx & ~(~0ul << 31) << 0) >> 0;
     printf("Number of sets: %lu\n", sets+1);
 
     /* Raw results */
